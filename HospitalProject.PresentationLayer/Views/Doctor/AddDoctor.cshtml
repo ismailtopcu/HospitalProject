@@ -1,0 +1,27 @@
+﻿@model CreateDoctorDto
+@{
+    ViewData["Title"] = "AddDoctor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h4>Doktor Ekleme Sayfası</h4>
+<form method="post">
+    <label>Doktor Ad</label>
+    <input type="text" asp-for="Name" class="form-control" placeholder="Adı" required/>
+    <br />
+    <label>Doktor Soyad</label>
+    <input type="text" asp-for="Surname" placeholder="Soyadı" class="form-control" required/>
+    <br />
+    <label>Doktor Telefon</label>
+    <input type="text" asp-for="Phone" placeholder="Telefonu" class="form-control" />
+    <br />
+    <label>Doktor Mail</label>
+    <input type="text" asp-for="Mail" placeholder="Maili" class="form-control" />
+    <br />
+    <label>Doktor Ünvanı</label>
+    <input type="text" asp-for="Title" placeholder="Ünvanı" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Doktor Ekle</button>
+</form>
+
+</div>

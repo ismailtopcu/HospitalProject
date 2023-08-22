@@ -10,6 +10,6 @@ namespace HospitalProject.BusinessLayer.Abstrtact
 {
 	public interface IDoctorService:IGenericService<Doctor>
 	{
-		List<GetDoctorDto> TGetListDoctorWithProfession();
+		
 	}
 }

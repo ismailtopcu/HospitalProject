@@ -31,8 +31,8 @@ namespace HospitalProject.WebAPI.Controllers
 		{
 			Appointment appointment = new Appointment()
 			{
-				DoctorID=createAppointmentDto.DoctorID,
-				PatientID=createAppointmentDto.PatientID,
+				DoctorId=createAppointmentDto.DoctorID,
+				PatientId=createAppointmentDto.PatientID,
 				Date = DateTime.Now,
 				AppointmentDate = createAppointmentDto.AppointmentDate
 			};

@@ -1,7 +1,15 @@
+using HospitalProject.DataAccessLayer.Concrete;
+using HospitalProject.EntityLayer.Concrete;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient();
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentityCore<AppUser>().AddEntityFrameworkStores<Context>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

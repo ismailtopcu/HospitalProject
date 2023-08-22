@@ -35,10 +35,7 @@ namespace HospitalProject.BusinessLayer.Concrete
 			return _doctorDal.GetList();
 		}
 
-		public List<GetDoctorDto> TGetListDoctorWithProfession()
-		{
-			return _doctorDal.GetListDoctorWithProfession();
-		}
+		
 
 		public void TInsert(Doctor t)
 		{

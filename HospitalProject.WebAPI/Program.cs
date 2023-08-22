@@ -6,6 +6,7 @@ using HospitalProject.DataAccessLayer.Concrete;
 using HospitalProject.DataAccessLayer.EntityFramework;
 using HospitalProject.DtoLayer.Dtos.DoctorDto;
 using HospitalProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,15 +20,6 @@ builder.Services.AddScoped<IDoctorService,DoctorManager>();
 builder.Services.AddScoped<IPatientDal,EfPatientDal>();
 builder.Services.AddScoped<IPatientService,PatientManager>();
 
-builder.Services.AddScoped<IProfessionDal,EfProfessionDal>();
-builder.Services.AddScoped<IProfessionService,ProfessionManager>();
-
-builder.Services.AddScoped<INurseDal,EfNurseDal>();
-builder.Services.AddScoped<INurseService, NurseManager>();
-
-builder.Services.AddScoped<IReceptionistDal, EfReceptionistDal>();
-builder.Services.AddScoped<IReceptionistService, ReceptionistManager>();
-
 builder.Services.AddScoped<IAppointmentDal, EfAppointmentDal>();
 builder.Services.AddScoped<IAppointmentService, AppointmentManager>();
 
@@ -35,6 +27,7 @@ builder.Services.AddScoped<IVisitDal, EfVisitDal>();
 builder.Services.AddScoped<IVisitService, VisitManager>();
 
 builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

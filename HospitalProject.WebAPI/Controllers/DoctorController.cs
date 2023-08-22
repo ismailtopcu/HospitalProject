@@ -22,12 +22,7 @@ namespace HospitalProject.WebAPI.Controllers
 			_mapper = mapper;
 		}
 
-		[HttpGet("WithProfession")]
-		public IActionResult DoctorListWithProfession()
-		{
-			var values = _doctorService.TGetListDoctorWithProfession();
-			return Ok(values);
-		}
+		
 		[HttpGet]
 		public IActionResult DoctorList()
 		{

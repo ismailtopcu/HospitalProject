@@ -18,11 +18,11 @@ namespace HospitalProject.DataAccessLayer.EntityFramework
 				var appointmentsByDate = context.Appointments.Where(x=>x.AppointmentDate.Date==dateTime.Date).Include(x=>x.Doctor).Include(x=>x.Patient).ToList();
 				var values = appointmentsByDate.Select(appointment => new GetAppointmentsByDateDto()
 				{
-					AppointmentID= appointment.AppointmentID,
+					AppointmentID= appointment.Id,
 					AppointmentDate = appointment.AppointmentDate,
 					Date=appointment.Date,
-					DoctorName= appointment.Doctor.Title + " " + appointment.Doctor.DoctorName + " " + appointment.Doctor.DoctorSurname,
-					PatientName = appointment.Patient.PatientName + " " + appointment.Patient.PatientSurname
+					DoctorName= appointment.Doctor.Title + " " + appointment.Doctor.Name + " " + appointment.Doctor.Surname,
+					PatientName = appointment.Patient.Name + " " + appointment.Patient.Surname
 				}).ToList();
 				return values;
 			}
@@ -35,9 +35,9 @@ namespace HospitalProject.DataAccessLayer.EntityFramework
 				var appointmentList = context.Appointments.Include(x=>x.Doctor).Include(x=>x.Patient).ToList();
 				var values = appointmentList.Select(appointment => new GetAppointmentWithDoctorAndPatientDto()
 				{
-					AppointmentID = appointment.AppointmentID,
-					DoctorName= appointment.Doctor.Title + " "+ appointment.Doctor.DoctorName + " " + appointment.Doctor.DoctorSurname,
-					PatientName= appointment.Patient.PatientName + " " + appointment.Patient.PatientSurname,
+					AppointmentID = appointment.Id,
+					DoctorName= appointment.Doctor.Title + " "+ appointment.Doctor.Name + " " + appointment.Doctor.Surname,
+					PatientName= appointment.Patient.Name + " " + appointment.Patient.Surname,
 					Date=DateTime.Now,
 					AppointmentDate= appointment.AppointmentDate
 				}).ToList();

@@ -8,12 +8,12 @@ namespace HospitalProject.DtoLayer.Dtos.DoctorDto
 {
 	public class CreateDoctorDto
 	{
-		public string DoctorName { get; set; }
-		public string DoctorSurname { get; set; }
-		public string Mail { get; set; }
+		public string Name { get; set; }
+		public string Surname { get; set; }
+		public string? Mail { get; set; }
 		public string? Phone { get; set; }
-		public string Title { get; set; }
-		public string Graduation { get; set; }
-		public int ProfessionID { get; set; }
+		public string? Title { get; set; }
+		
 	}
+    
 }

@@ -10,6 +10,6 @@ namespace HospitalProject.DataAccessLayer.Abstract
 {
 	public interface IDoctorDal:IGenericDal<Doctor>
 	{
-		List<GetDoctorDto> GetListDoctorWithProfession();
+		
 	}
 }

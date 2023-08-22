@@ -8,9 +8,9 @@ namespace HospitalProject.EntityLayer.Concrete
 {
 	public class Appointment
 	{
-        public int AppointmentID { get; set; }
-        public int DoctorID { get; set; }
-        public int PatientID { get; set; }
+        public int Id { get; set; }
+        public int DoctorId { get; set; }
+        public int PatientId { get; set; }
         public DateTime Date { get; set; }
         public DateTime AppointmentDate { get; set; }
         public bool Status { get; set; }

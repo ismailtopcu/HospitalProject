@@ -8,10 +8,10 @@ namespace HospitalProject.DtoLayer.Dtos.PatientDto
 {
 	public class CreatePatientDto
 	{
-		public string PatientName { get; set; }
-		public string PatientSurname { get; set; }
-		public string PatientPhone { get; set; }
-		public string PatientMail { get; set; }
-		public string PatientAdress { get; set; }
-	}
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Phone { get; set; }
+        public string Mail { get; set; }
+        public string Adress { get; set; }
+    }
 }

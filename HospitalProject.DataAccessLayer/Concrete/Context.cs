@@ -1,4 +1,5 @@
 ﻿using HospitalProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HospitalProject.DataAccessLayer.Concrete
 {
-	public class Context :DbContext
+	public class Context :IdentityDbContext<AppUser>
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -17,9 +18,6 @@ namespace HospitalProject.DataAccessLayer.Concrete
 		}
 		public DbSet<Doctor> Doctors { get; set; }
 		public DbSet<Patient> Patients { get; set; }
-		public DbSet<Profession> Professions { get; set; }
-		public DbSet<Nurse> Nurses { get; set; }
-		public DbSet<Receptionist> Receptionists{ get; set; }
 		public DbSet<Appointment> Appointments { get; set; }
 		public DbSet<Visit> Visits { get; set; }
 	}
