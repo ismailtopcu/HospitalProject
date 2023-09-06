@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HospitalProject.PresentationLayer.Controllers
 {
-	public class DoctorController : Controller
+	public class AdminDoctorController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public DoctorController(IHttpClientFactory httpClientFactory)
+		public AdminDoctorController(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
 		}

@@ -1,0 +1,38 @@
+﻿@model List<GetDoctorDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>Doktor Adı</th>
+			<th>Doktor Soyadı</th>
+			<th>Doktor Telefon</th>
+			<th>Doktor Mail</th>
+			<th>Doktor Ünvanı</th>
+			<th>Sil</th>
+			<th>Güncelle</th>
+
+
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td>@item.Surname</td>
+				<td>@item.Phone</td>
+				<td>@item.Mail</td>
+				<td>@item.Title</td>
+				<td><a href="/AdminDoctor/DeleteDoctor/@item.Id" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+				<td><a href="/AdminDoctor/UpdateDoctor/@item.Id" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+
+			</tr>
+		}
+
+
+	</table>
+	<a href="/AdminDoctor/AddDoctor" class="btn mb-1 btn-rounded btn-outline-primary">Ekle</a>
+</div>

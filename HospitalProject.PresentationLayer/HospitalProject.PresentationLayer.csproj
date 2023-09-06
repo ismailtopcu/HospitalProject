@@ -29,4 +29,8 @@
     <ProjectReference Include="..\HospitalProject.EntityLayer\HospitalProject.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+
 </Project>
